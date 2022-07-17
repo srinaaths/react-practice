@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useEffect , useState} from 'react'
+import Axios from 'axios';
+import Movie from './Movie'
+import Home from './Home'
 
 function Movies() {
     const [movies, setMovies] = useState([])

@@ -1,18 +1,23 @@
 import React from 'react'
-import {BrowserRouter as Router, Routes, Route, Link, Navigate} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom'
 import LearnRoute from './LearnRoute'
 import MainRoute from './MainRoute'
+import Movies from './Movies'
+import TopRatedMovie from './TopRatedMovie'
 
 function Home() {
   return (
-    <Router>
-        <Link to='/learn'>Learn</Link>
+    <div>
+      This is the home page <br />
+      <Router>
+        <Link to='/movies'>Movies</Link>
+        <Link to='/topRatedMovie'>Top Rated movie</Link>
         <Routes>
-            <Route path='/' element = {<MainRoute />} />
-            <Route path='/learn' element = {<LearnRoute />} />
-            <Route path='/learn2' element = {<Navigate replace to={'/learn'} />} />
+          <Route path='/movies' element={<Movies />} />
+          <Route path='/topRatedMovie' element={<TopRatedMovie />} />
         </Routes>
-    </Router>
+      </Router>
+    </div>
   )
 }
 
